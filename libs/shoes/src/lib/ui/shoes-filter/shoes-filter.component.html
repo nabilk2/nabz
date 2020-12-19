@@ -1,0 +1,48 @@
+<div class="filter-container">
+    <form class="filter-form" [formGroup]="form">
+        <mat-form-field class="filter-form__search" appearance="outline">
+            <input type="text" matInput formControlName="name" placeholder="Name"/>
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="filter-form__gender" appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="gender">
+                <mat-option *ngFor="let gender of genders | keyvalue" [value]="gender.value">
+                    {{ gender.value | titlecase }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="filter-form__color" appearance="outline">
+            <mat-select formControlName="color">
+                <mat-option *ngFor="let color of colors" [value]="color.color">
+                    <span [style.background-color]="color.hex" class="filter-form__color--option">&nbsp;</span>
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="filter-form__brand" appearance="outline">
+            <mat-label>Brand</mat-label>
+            <mat-select formControlName="brand">
+                <mat-option *ngFor="let brand of brands | keyvalue" [value]="brand.value">
+                    {{ brand.value | titlecase }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="filter-form__year" appearance="outline">
+            <input 
+                matInput 
+                placeholder="Year"
+                formControlName="releaseYear"
+                [matAutocomplete]="auto"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let year of years" [value]="year"> 
+                    {{year}}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</div>

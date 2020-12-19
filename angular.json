@@ -116,6 +116,32 @@
           }
         }
       }
+    },
+    "shoes": {
+      "projectType": "library",
+      "root": "libs/shoes",
+      "sourceRoot": "libs/shoes/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/src/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shoes/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

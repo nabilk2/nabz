@@ -1,0 +1,6 @@
+<nabz-shoes-filter></nabz-shoes-filter>
+<div class="shoes-container">
+    <ng-container *ngFor="let shoe of shoes$ | async">
+        <nabz-shoe [shoe]="shoe"></nabz-shoe>
+    </ng-container>
+</div>

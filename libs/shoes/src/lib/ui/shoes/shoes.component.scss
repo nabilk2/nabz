@@ -1,0 +1,11 @@
+:host {
+    display: grid;
+    place-items: center;
+}
+
+.shoes-container {
+    display: grid;
+    grid-template-columns: repeat(4, 34rem);
+    justify-items: center;
+     
+}

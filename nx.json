@@ -19,12 +19,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "ZjU0ZDg0YTMtZmI3NC00MGIyLWExN2YtMzkxNTliNTU3YzE0fHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -36,9 +31,10 @@
     },
     "shoe-app-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "shoe-app"
-      ]
+      "implicitDependencies": ["shoe-app"]
+    },
+    "shoes": {
+      "tags": []
     }
   }
 }

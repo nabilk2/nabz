@@ -19,6 +19,7 @@
     "affected:lint": "nx affected:lint",
     "affected:dep-graph": "nx affected:dep-graph",
     "affected": "nx affected",
+    "generate-icons": "npx svg-to-ts",
     "format": "nx format:write",
     "format:write": "nx format:write",
     "format:check": "nx format:check",
@@ -27,6 +28,26 @@
     "dep-graph": "nx dep-graph",
     "help": "nx help",
     "betterer": "betterer"
+  },
+  "svg-to-ts": {
+    "generateType": "false",
+    "delimiter": "KEBAB",
+    "conversionType": "files",
+    "iconsFolderName": "svg",
+    "prefix": "shop",
+    "srcFiles": [
+      "./libs/shoes/src/assets/svg/*.svg"
+    ],
+    "outputDirectory": "./libs/shoes/src/lib",
+    "barrelFileName": "svg-icons",
+    "svgoConfig": {
+      "plugins": [
+        {
+          "removeDimensions": true,
+          "cleanupAttrs": true
+        }
+      ]
+    }
   },
   "private": true,
   "dependencies": {
@@ -40,6 +61,7 @@
     "@angular/platform-browser": "^10.1.0",
     "@angular/platform-browser-dynamic": "^10.1.0",
     "@angular/router": "^10.1.0",
+    "@ngneat/svg-icon": "^2.1.0",
     "@nrwl/angular": "10.4.4",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
