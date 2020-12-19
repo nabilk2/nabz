@@ -13,7 +13,7 @@ import { SvgIconsModule } from '@ngneat/svg-icon';
     BrowserModule, 
     BrowserAnimationsModule,
     SvgIconsModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
