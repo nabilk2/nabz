@@ -15,7 +15,17 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nabz/shoes": ["libs/shoes/src/index.ts"],
+      "@nabz/shoes/page/shoe-list": ["libs/shoes/page/shoe-list/src/index.ts"],
+      "@nabz/shoes/ui/shoe-filter": ["libs/shoes/ui/shoe-filter/src/index.ts"],
+      "@nabz/shoes/ui/shoe": ["libs/shoes/ui/shoe/src/index.ts"],
+      "@nabz/shoes/shared/services/shoes-service": [
+        "libs/shoes/shared/services/shoes-service/src/index.ts"
+      ],
+      "@nabz/shoes/shared/types": ["libs/shoes/shared/types/src/index.ts"],
+      "@nabz/shoes/shared/assets": ["libs/shoes/shared/assets/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

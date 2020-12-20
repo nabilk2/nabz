@@ -1,0 +1,105 @@
+.shoe-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3.5rem;
+
+    width: 32rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 1rem;
+    background-color: var(--cultured);
+    box-shadow: 0 1rem 5rem var(--light-gray);
+
+    
+    &__info {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        align-self: start;
+        justify-self: start;
+
+        &--name {
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        &--brand {
+            font-size: 2.4rem;
+            font-weight: 700;
+        }
+    }
+    
+    &__image {
+        width: 100%;
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        mix-blend-mode: multiply;
+    }
+
+    &__wishlist {
+        grid-column: 2/3;
+        grid-row: 1/1;
+        z-index: 3;
+
+        justify-self: end;
+        font-size: 3.2rem;
+        transition: all .2s;
+        cursor: pointer;
+        
+        &:hover {
+            transform: translateY(-1rem);
+            filter: drop-shadow(0.35rem 0.35rem 1.5rem var(--davys-grey));
+        }
+    }
+
+    &__price {
+        align-self: center;
+        
+        display: flex;
+        flex-direction: column;
+
+        &--label {
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        &--price {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+    }    
+
+    &__cta {
+        align-self: center;
+        justify-self: end;
+        overflow: hidden;
+        padding: .5rem .8rem .3rem .8rem;
+        transition: all .2s ease;
+        cursor: pointer;
+        background-color: black;
+        border: .1rem solid #fafafa;
+        border-radius: .5rem;
+        color: #fafafa;
+        display: flex;
+        align-items: center;
+
+        &--label {
+            position: absolute;
+            left: -7rem;
+        }
+
+        &--icon {
+            font-size: 2.4rem;
+        }
+
+        &:hover {
+            padding-left: 9.5rem;
+            transform: scale(1,1);
+        }
+
+        &:hover &--label {
+            left: 2rem;
+        }
+
+    }
+
+}
