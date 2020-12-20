@@ -33,12 +33,12 @@
     "generateType": "false",
     "delimiter": "KEBAB",
     "conversionType": "files",
-    "iconsFolderName": "svg",
+    "iconsFolderName": "icons",
     "prefix": "shop",
     "srcFiles": [
-      "./libs/shoes/src/assets/svg/*.svg"
+      "./libs/shoes_legacy/src/assets/svg/*.svg"
     ],
-    "outputDirectory": "./libs/shoes/src/lib",
+    "outputDirectory": "./libs/shoes/shared/assets/src",
     "barrelFileName": "svg-icons",
     "svgoConfig": {
       "plugins": [
@@ -69,6 +69,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.3",
+    "@angular-eslint/eslint-plugin": "^0.8.0-beta.6",
     "@angular/cli": "~10.1.3",
     "@angular/compiler-cli": "^10.1.0",
     "@angular/language-service": "^10.1.0",

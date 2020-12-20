@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 const ROUTES: Route[] = [
     { path: '', component: AppComponent, pathMatch: 'full' },
-    { path: 'shoes', loadChildren: () => import('@nabz/shoes').then(module => module.ShoesUIModule) }
+    { path: 'shoes', loadChildren: () => import('@nabz/shoes/page/shoe-list').then(module => module.ShoeListModule) }
 ];
 
 

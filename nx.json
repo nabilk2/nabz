@@ -33,7 +33,22 @@
       "tags": [],
       "implicitDependencies": ["shoe-app"]
     },
-    "shoes": {
+    "shoes-page-shoe-list": {
+      "tags": []
+    },
+    "shoes-ui-shoe-filter": {
+      "tags": []
+    },
+    "shoes-ui-shoe": {
+      "tags": []
+    },
+    "shoes-shared-services-shoes-service": {
+      "tags": []
+    },
+    "shoes-shared-types": {
+      "tags": []
+    },
+    "shoes-shared-assets": {
       "tags": []
     }
   }

@@ -21,10 +21,7 @@
             "polyfills": "apps/shoe-app/src/polyfills.ts",
             "tsConfig": "apps/shoe-app/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/shoe-app/src/favicon.ico",
-              "apps/shoe-app/src/assets"
-            ],
+            "assets": ["apps/shoe-app/src/favicon.ico"],
             "styles": ["apps/shoe-app/src/styles.scss"],
             "scripts": []
           },
@@ -117,29 +114,145 @@
         }
       }
     },
-    "shoes": {
+    "shoes-page-shoe-list": {
       "projectType": "library",
-      "root": "libs/shoes",
-      "sourceRoot": "libs/shoes/src",
+      "root": "libs/shoes/page/shoe-list",
+      "sourceRoot": "libs/shoes/page/shoe-list/src",
       "prefix": "nabz",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shoes/src/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shoes/page/shoe-list/src/**/*.ts",
+              "libs/shoes/page/shoe-list/src/**/*.html"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/page/shoe-list"],
           "options": {
-            "jestConfig": "libs/shoes/jest.config.js",
+            "jestConfig": "libs/shoes/page/shoe-list/jest.config.js",
             "passWithNoTests": true
           }
         }
-      },
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
+      }
+    },
+    "shoes-ui-shoe-filter": {
+      "projectType": "library",
+      "root": "libs/shoes/ui/shoe-filter",
+      "sourceRoot": "libs/shoes/ui/shoe-filter/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/ui/shoe-filter/src/**/*.ts",
+              "libs/shoes/ui/shoe-filter/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/ui/shoe-filter"],
+          "options": {
+            "jestConfig": "libs/shoes/ui/shoe-filter/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-ui-shoe": {
+      "projectType": "library",
+      "root": "libs/shoes/ui/shoe",
+      "sourceRoot": "libs/shoes/ui/shoe/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/ui/shoe/src/**/*.ts",
+              "libs/shoes/ui/shoe/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/ui/shoe"],
+          "options": {
+            "jestConfig": "libs/shoes/ui/shoe/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-shared-services-shoes-service": {
+      "projectType": "library",
+      "root": "libs/shoes/shared/services/shoes-service",
+      "sourceRoot": "libs/shoes/shared/services/shoes-service/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/shared/services/shoes-service/src/**/*.ts",
+              "libs/shoes/shared/services/shoes-service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/shared/services/shoes-service"],
+          "options": {
+            "jestConfig": "libs/shoes/shared/services/shoes-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-shared-types": {
+      "root": "libs/shoes/shared/types",
+      "sourceRoot": "libs/shoes/shared/types/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/shared/types/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/shared/types"],
+          "options": {
+            "jestConfig": "libs/shoes/shared/types/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-shared-assets": {
+      "root": "libs/shoes/shared/assets",
+      "sourceRoot": "libs/shoes/shared/assets/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/shared/assets/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/shared/assets"],
+          "options": {
+            "jestConfig": "libs/shoes/shared/assets/jest.config.js",
+            "passWithNoTests": true
+          }
         }
       }
     }
@@ -165,6 +278,9 @@
     },
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "shoe-app"
