@@ -7,12 +7,6 @@ import { Shoe } from '@nabz/shoes/shared/types';
   styleUrls: ['./shoe.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ShoeComponent implements OnInit {
+export class ShoeComponent {
   @Input() shoe: Shoe;
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

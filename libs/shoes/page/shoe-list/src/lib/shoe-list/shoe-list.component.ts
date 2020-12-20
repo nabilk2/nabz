@@ -7,12 +7,9 @@ import { ShoesService } from '@nabz/shoes/shared/services/shoes-service';
   styleUrls: ['./shoe-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ShoeListComponent implements OnInit {
+export class ShoeListComponent {
   shoes$ = this._shoesService.shoes$;
 
   constructor(private _shoesService: ShoesService) { }
-
-  ngOnInit(): void {
-  }
 
 }
