@@ -5,7 +5,7 @@ stages:
 
 
 default: 
-  image: $CI_REGISTRY_IMAGE/node:latest
+  image: node:latest
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
