@@ -21,8 +21,8 @@ install_dependencies:
 
 build_app: 
   stage: build
-  script: npm run affected:build --base=HEAD~1 --head=HEAD
+  script: npm run affected:build
 
 test_app:
   stage: test
-  script: npm run affected:test --base=HEAD~1 --head=HEAD
+  script: npm run affected:test
