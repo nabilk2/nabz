@@ -21,8 +21,8 @@ install_dependencies:
 
 build_app: 
   stage: build
-  script: nx build shoe-app --prod
+  script: npm run affected:build --base=master --head=HEAD
 
 test_app:
   stage: test
-  script: nx test shoe-app
+  script: npm run affected:test --base=master --head=HEAD
