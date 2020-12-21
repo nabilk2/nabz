@@ -97,4 +97,4 @@ Teams using Nx gain the advantage of building full-stack applications with their
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
 
-Test.
+Test. From GitLab.
