@@ -5,7 +5,7 @@ stages:
 
 
 default: 
-  image: node:lts
+  image: node:latest
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
