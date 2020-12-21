@@ -1,4 +1,28 @@
-build-job:
+stages: 
+  - install
+  - build
+  - test
+
+
+default: 
+  image: $CI_REGISTRY_IMAGE/node:latest
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths: 
+    - .npm/
+
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
+install_dependencies: 
+  stage: install
+  script: npm install
+
+build_app: 
   stage: build
-  script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
+  script: nx build shoe-app --prod
+
+test_app:
+  stage: test
+  script: nx test shoe-app
