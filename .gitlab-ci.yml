@@ -1,0 +1,28 @@
+stages: 
+  - install
+  - build
+  - test
+
+
+default: 
+  image: node:latest
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths: 
+    - .npm/
+
+before_script:
+  - npm ci --cache .npm --prefer-offline
+
+install_dependencies: 
+  stage: install
+  script: npm install
+
+build_app: 
+  stage: build
+  script: npm run affected:build
+
+test_app:
+  stage: test
+  script: npm run affected:test
