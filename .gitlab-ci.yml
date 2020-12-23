@@ -23,6 +23,11 @@ build_app:
   stage: build
   script: npm run affected:build
 
+lint_app:
+  stage: test
+  script: npm run affected:lint
+  needs: []
+
 test_app:
   stage: test
   script: npm run affected:test

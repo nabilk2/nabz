@@ -1,18 +1,20 @@
-<div class="shoe-card">
-    <svg-icon class="shoe-card__wishlist" key="013-diamond"></svg-icon>
-    <div class="shoe-card__info">
-        <p class="shoe-card__info--name">{{shoe.name}}</p>
-        <h3 class="shoe-card__info--brand">{{shoe.brand}}</h3>
+<ng-container *ngIf="shoe">
+    <div class="shoe-card">
+        <svg-icon class="shoe-card__wishlist" key="013-diamond"></svg-icon>
+        <div class="shoe-card__info">
+            <p class="shoe-card__info--name">{{shoe.name}}</p>
+            <h3 class="shoe-card__info--brand">{{shoe.brand}}</h3>
+        </div>
+        <figure class="shoe-card__image">
+            <img [src]="shoe.media.thumbUrl" [alt]="shoe.name">
+        </figure>
+        <div class="shoe-card__price">
+            <label class="shoe-card__price--label">Price</label>
+            <span class="shoe-card__price--price">&#36;{{shoe.retailPrice}}</span>
+        </div>
+        <button class="shoe-card__cta">
+            <span class="shoe-card__cta--label">Add To Cart</span>
+            <svg-icon class="shoe-card__cta--icon" key="015-add-to-cart"></svg-icon>
+        </button>
     </div>
-    <figure class="shoe-card__image">
-        <img [src]="shoe.media.thumbUrl" [alt]="shoe.name">
-    </figure>
-    <div class="shoe-card__price">
-        <label class="shoe-card__price--label">Price</label>
-        <span class="shoe-card__price--price">&#36;{{shoe.retailPrice}}</span>
-    </div>
-    <button class="shoe-card__cta">
-        <span class="shoe-card__cta--label">Add To Cart</span>
-        <svg-icon class="shoe-card__cta--icon" key="015-add-to-cart"></svg-icon>
-    </button>
-</div>
+</ng-container>

@@ -1,15 +1,23 @@
+import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
-import { ShoeService } from './shoe.service';
+import { ShoesService } from './shoes.service';
 
-describe('ShoeService', () => {
-  let service: ShoeService;
+describe('ShoesService', () => {
+  let service: ShoesService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(ShoeService);
+    TestBed.configureTestingModule({
+      imports: [
+        HttpClientModule
+      ],
+      providers: [
+        ShoesService
+      ]
+    });
+    service = TestBed.inject(ShoesService);
   });
-
+  
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
