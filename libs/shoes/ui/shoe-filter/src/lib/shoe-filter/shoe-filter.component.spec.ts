@@ -10,13 +10,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatIconModule } from '@angular/material/icon';
 import { ShoesService } from '@nabz/shoes/shared/services/shoes-service';
 
-
-
 describe('ShoeFilterComponent', () => {
   let component: ShoeFilterComponent;
   let fixture: ComponentFixture<ShoeFilterComponent>;
   let loader: HarnessLoader;
-  const mockShoeService = jest.fn();
+  const mockShoeService = {
+    onFilterChange: jest.fn()
+  };
 
 
   beforeEach(async () => {
@@ -49,4 +49,22 @@ describe('ShoeFilterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have no filters', () => {
+    const isEmptyForm = Object.values(component.form.value).includes(value => value);
+    expect(isEmptyForm).toBeFalsy();
+  });
+
+  it('should filter brand', () => {
+    component.form.patchValue({ brand: 'Nike' });
+
+    expect(component.form.get('brand').value).toEqual('Nike');
+  });
+
+  it('should call onFormValueChanges when a filter has been changed', () => {
+    component.form.patchValue({ brand: 'Nike' });
+
+    expect(mockShoeService.onFilterChange).toHaveBeenCalledWith(component.form.value);
+  });
+
 });

@@ -40,7 +40,6 @@ export class ShoeFilterComponent implements OnInit {
 
   onFormValueChanges(): void {
     this.form.valueChanges.subscribe(filters => {
-      console.log(filters);
       this._shoeService.onFilterChange(filters);
     });
   }
