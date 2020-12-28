@@ -65,6 +65,7 @@
     "@nrwl/angular": "11.0.15",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {
@@ -88,6 +89,7 @@
     "@types/node": "12.12.38",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "@typescript-eslint/parser": "4.3.0",
+    "codelyzer": "^6.0.0",
     "cypress": "^5.5.0",
     "dotenv": "6.2.0",
     "eslint": "7.10.0",
@@ -110,7 +112,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts}": "eslint --cache --fix",
+    "*.{js,ts}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
     "*.format:write": "prettier --write"
   }
 }
