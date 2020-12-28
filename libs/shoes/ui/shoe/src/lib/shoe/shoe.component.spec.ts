@@ -3,7 +3,6 @@ import { By } from '@angular/platform-browser';
 import { ShoeComponent } from './shoe.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { Gender, Shoe } from '@nabz/shoes/shared/types';
-import { ChangeDetectionStrategy } from '@angular/core';
 
 
 describe('ShoeComponent', () => {
