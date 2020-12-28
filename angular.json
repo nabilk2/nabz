@@ -255,6 +255,131 @@
           }
         }
       }
+    },
+    "shoes-ui-header": {
+      "projectType": "library",
+      "root": "libs/shoes/ui/header",
+      "sourceRoot": "libs/shoes/ui/header/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/ui/header/src/**/*.ts",
+              "libs/shoes/ui/header/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/ui/header"],
+          "options": {
+            "jestConfig": "libs/shoes/ui/header/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-page-home": {
+      "projectType": "library",
+      "root": "libs/shoes/page/home",
+      "sourceRoot": "libs/shoes/page/home/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/page/home/src/**/*.ts",
+              "libs/shoes/page/home/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/page/home"],
+          "options": {
+            "jestConfig": "libs/shoes/page/home/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-shared-services-user-service": {
+      "projectType": "library",
+      "root": "libs/shoes/shared/services/user-service",
+      "sourceRoot": "libs/shoes/shared/services/user-service/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/shared/services/user-service/src/**/*.ts",
+              "libs/shoes/shared/services/user-service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/shared/services/user-service"],
+          "options": {
+            "jestConfig": "libs/shoes/shared/services/user-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-shared-services-cart-service": {
+      "projectType": "library",
+      "root": "libs/shoes/shared/services/cart-service",
+      "sourceRoot": "libs/shoes/shared/services/cart-service/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/shared/services/cart-service/src/**/*.ts",
+              "libs/shoes/shared/services/cart-service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/shared/services/cart-service"],
+          "options": {
+            "jestConfig": "libs/shoes/shared/services/cart-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-shared-services-wishlist-service": {
+      "projectType": "library",
+      "root": "libs/shoes/shared/services/wishlist-service",
+      "sourceRoot": "libs/shoes/shared/services/wishlist-service/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shoes/shared/services/wishlist-service/src/**/*.ts",
+              "libs/shoes/shared/services/wishlist-service/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/shared/services/wishlist-service"],
+          "options": {
+            "jestConfig": "libs/shoes/shared/services/wishlist-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

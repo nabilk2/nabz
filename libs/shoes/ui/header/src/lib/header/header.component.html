@@ -1,0 +1,29 @@
+<ng-container *ngIf="state$ | async as state">
+    <header class="header">
+        <div class="header__top-container">
+            <span class="header__top-container--text-1">FREE SHIPPING OVER $50</span>
+            <span class="header__top-container--text-2">
+                <svg-icon class="truck-icon" key="031-delivery-truck"></svg-icon>
+                HOLIDAY SHIPPING AND RETURNS
+            </span>
+        </div>
+        <div class="header__bottom-container">
+            <span class="header__bottom-container--icon" routerLink="/">ICON</span>
+            <div class="cta">
+                <mat-form-field class="cta__search">
+                    <input matInput type="text" name="shoe-name" placeholder="Search shoes" />
+                    <svg-icon class="cta__search--icon" matSuffix key="025-magnifying-glass"></svg-icon>
+                </mat-form-field>
+                <div class="cta__wishlist">
+                    <svg-icon class="cta__wishlist--icon" key="020-wishlist"></svg-icon>
+                    <span *ngIf="wishlist.items.length" class="cta__wishlist--counter">{{wishlist.items.length}}</span>
+                </div>
+                <div class="cta__cart">
+                    <svg-icon class="cta__cart--icon" key="014-shopping-cart"></svg-icon>
+                    <span *ngIf="cart.shoes.length" class="cta__cart--counter">{{cart.shoes.length}}</span>
+                </div>
+                <svg-icon class="cta__profile" key="010-profile"></svg-icon>
+            </div>
+        </div>
+    </header>
+</ng-container>

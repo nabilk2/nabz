@@ -50,6 +50,21 @@
     },
     "shoes-shared-assets": {
       "tags": []
+    },
+    "shoes-ui-header": {
+      "tags": []
+    },
+    "shoes-page-home": {
+      "tags": []
+    },
+    "shoes-shared-services-user-service": {
+      "tags": []
+    },
+    "shoes-shared-services-cart-service": {
+      "tags": []
+    },
+    "shoes-shared-services-wishlist-service": {
+      "tags": []
     }
   }
 }
