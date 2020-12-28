@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { ShoeComponent } from './shoe.component';
 import { SvgIconsModule } from '@ngneat/svg-icon';
 import { Gender, Shoe } from '@nabz/shoes/shared/types';
@@ -39,6 +40,7 @@ describe('ShoeComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ShoeComponent);
     component = fixture.componentInstance;
+    component.shoe = shoe;
     fixture.detectChanges();
   });
   
@@ -48,7 +50,19 @@ describe('ShoeComponent', () => {
   });
 
   it('should have a shoe with name: Air Jordan', () => {
-    component.shoe = shoe;
-    expect(component.shoe.name).toContain('Jordan');
+    // component.shoe = shoe;
+    expect(component.shoe.name).toEqual(shoe.name);
+  });
+
+  it('should have a shoe with an image equal to thumbUrl', () => {
+    // component.shoe = shoe;
+    fixture.detectChanges();
+
+    const de = fixture.debugElement;
+    const imageElement: HTMLInputElement = de.query(By.css('.shoe-card__image img')).nativeElement;
+
+    const imageElementSrc = imageElement.src.split('localhost/');
+
+    expect(imageElementSrc[1]).toEqual(shoe.media.thumbUrl);
   });
 });

@@ -18,6 +18,9 @@ before_script:
 install_dependencies: 
   stage: install
   script: npm install
+  except:
+    changes:
+      - "*.md"
 
 build_app: 
   stage: build
@@ -27,7 +30,15 @@ lint_app:
   stage: test
   script: npm run affected:lint
   needs: []
+  except:
+    refs:
+      - master
+    changes:
+      - "*.md"
 
 test_app:
   stage: test
   script: npm run affected:test
+  except:
+    changes:
+      - "*.md"
