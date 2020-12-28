@@ -7,5 +7,10 @@ module.exports = {
     '<rootDir>/libs/shoes/shared/services/shoes-service',
     '<rootDir>/libs/shoes/shared/types',
     '<rootDir>/libs/shoes/shared/assets',
+    '<rootDir>/libs/shoes/ui/header',
+    '<rootDir>/libs/shoes/page/home',
+    '<rootDir>/libs/shoes/shared/services/user-service',
+    '<rootDir>/libs/shoes/shared/services/cart-service',
+    '<rootDir>/libs/shoes/shared/services/wishlist-service',
   ],
 };

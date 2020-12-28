@@ -49,6 +49,13 @@
             transform: translateY(-1rem);
             filter: drop-shadow(0.35rem 0.35rem 1.5rem var(--davys-grey));
         }
+
+        &--in-wishlist {
+            @extend .shoe-card__wishlist;
+            fill: cornflowerblue;
+        }
+
+        
     }
 
     &__price {

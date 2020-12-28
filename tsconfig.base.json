@@ -24,7 +24,19 @@
         "libs/shoes/shared/services/shoes-service/src/index.ts"
       ],
       "@nabz/shoes/shared/types": ["libs/shoes/shared/types/src/index.ts"],
-      "@nabz/shoes/shared/assets": ["libs/shoes/shared/assets/src/index.ts"]
+      "@nabz/shoes/shared/assets": ["libs/shoes/shared/assets/src/index.ts"],
+      "@nabz/shoes/ui/header": ["libs/shoes/ui/header/src/index.ts"],
+      "@nabz/shoes/page/home": ["libs/shoes/page/home/src/index.ts"],
+      "@nabz/user-service": ["libs/user-service/src/index.ts"],
+      "@nabz/shoes/shared/services/user-service": [
+        "libs/shoes/shared/services/user-service/src/index.ts"
+      ],
+      "@nabz/shoes/shared/services/cart-service": [
+        "libs/shoes/shared/services/cart-service/src/index.ts"
+      ],
+      "@nabz/shoes/shared/services/wishlist-service": [
+        "libs/shoes/shared/services/wishlist-service/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
