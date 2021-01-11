@@ -1,0 +1,24 @@
+:host {
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+
+    .header {
+        grid-column: 1/4;
+    }
+
+    .left-sidebar {
+        grid-column: 1/2;
+    }
+
+    main {
+        grid-column: 2/3;
+    }
+
+    .right-sidebar {
+        grid-column: 3/4;
+    }
+
+    footer {
+        grid-column: 1/4;
+    }
+}

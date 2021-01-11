@@ -37,4 +37,8 @@ export class ShoesService {
       return obj;
     }, {});
   }
+
+  getShoe(shoeId: string): Observable<Shoe> {
+    return this.http.get<Shoe>(`${BASE_URL}/sneakers/${shoeId}`);
+  }
 }

@@ -12,5 +12,8 @@ module.exports = {
     '<rootDir>/libs/shoes/shared/services/user-service',
     '<rootDir>/libs/shoes/shared/services/cart-service',
     '<rootDir>/libs/shoes/shared/services/wishlist-service',
+    '<rootDir>/libs/shoes/page/cart',
+    '<rootDir>/libs/shoes/ui/cart-items',
+    '<rootDir>/libs/shoes/ui/cart-item',
   ],
 };

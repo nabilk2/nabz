@@ -7,7 +7,7 @@ import { Cart } from '@nabz/shoes/shared/types';
   providedIn: 'root',
 })
 export class CartService {
-  #cartSubject = new BehaviorSubject<Cart>({ sessionId: null, shoes: [] });
+  #cartSubject = new BehaviorSubject<Cart>({ sessionId: null, shoes: new Map() });
   cart$ = this.#cartSubject.asObservable();
 
   constructor(private _userService: UserService) {
@@ -22,15 +22,15 @@ export class CartService {
   }
 
   add(shoeId: string): void {
-    const { shoes } = this.#cartSubject.value;
-    const clonedShoes = [...shoes];
+    const clonedShoes = {...this.#cartSubject.value.shoes};
 
-    const foundShoeIndex = shoes.findIndex((shoeItem) => shoeItem.shoeId === shoeId);
+    const hasShoe = clonedShoes.has(shoeId);
 
-    if (foundShoeIndex === -1) {
-      clonedShoes.push({ shoeId, quantity: 1 });
+    if (!hasShoe) {
+      clonedShoes.set(shoeId, 1);
     } else {
-      clonedShoes[foundShoeIndex].quantity++;
+      const shoe = clonedShoes.get(shoeId);
+      clonedShoes.set(shoeId, shoe + 1);
     }
 
     this.#cartSubject.next({
@@ -39,5 +39,17 @@ export class CartService {
     });
 
     this.storeCart();
+  }
+
+  changeQuantity(shoeId: string, quantity: number): void {
+    const { shoes } = this.#cartSubject.value;
+
+    const foundShoeIndex = shoes.has(shoeId);
+    
+    if (foundShoeIndex) {
+      shoes.set(shoeId, quantity);
+      this.#cartSubject.next({...this.#cartSubject.value, shoes });
+      this.storeCart();      
+    }
   }
 }

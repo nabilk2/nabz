@@ -65,6 +65,15 @@
     },
     "shoes-shared-services-wishlist-service": {
       "tags": []
+    },
+    "shoes-page-cart": {
+      "tags": []
+    },
+    "shoes-ui-cart-items": {
+      "tags": []
+    },
+    "shoes-ui-cart-item": {
+      "tags": []
     }
   }
 }

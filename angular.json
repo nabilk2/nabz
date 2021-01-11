@@ -123,10 +123,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shoes/page/shoe-list/src/**/*.ts",
-              "libs/shoes/page/shoe-list/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/shoes/page/shoe-list/src/**/*.ts", "libs/shoes/page/shoe-list/src/**/*.html"]
           }
         },
         "test": {
@@ -148,10 +145,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shoes/ui/shoe-filter/src/**/*.ts",
-              "libs/shoes/ui/shoe-filter/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/shoes/ui/shoe-filter/src/**/*.ts", "libs/shoes/ui/shoe-filter/src/**/*.html"]
           }
         },
         "test": {
@@ -173,10 +167,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shoes/ui/shoe/src/**/*.ts",
-              "libs/shoes/ui/shoe/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/shoes/ui/shoe/src/**/*.ts", "libs/shoes/ui/shoe/src/**/*.html"]
           }
         },
         "test": {
@@ -265,10 +256,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shoes/ui/header/src/**/*.ts",
-              "libs/shoes/ui/header/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/shoes/ui/header/src/**/*.ts", "libs/shoes/ui/header/src/**/*.html"]
           }
         },
         "test": {
@@ -290,10 +278,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shoes/page/home/src/**/*.ts",
-              "libs/shoes/page/home/src/**/*.html"
-            ]
+            "lintFilePatterns": ["libs/shoes/page/home/src/**/*.ts", "libs/shoes/page/home/src/**/*.html"]
           }
         },
         "test": {
@@ -376,6 +361,72 @@
           "outputs": ["coverage/libs/shoes/shared/services/wishlist-service"],
           "options": {
             "jestConfig": "libs/shoes/shared/services/wishlist-service/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-page-cart": {
+      "projectType": "library",
+      "root": "libs/shoes/page/cart",
+      "sourceRoot": "libs/shoes/page/cart/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/page/cart/src/**/*.ts", "libs/shoes/page/cart/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/page/cart"],
+          "options": {
+            "jestConfig": "libs/shoes/page/cart/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-ui-cart-items": {
+      "projectType": "library",
+      "root": "libs/shoes/ui/cart-items",
+      "sourceRoot": "libs/shoes/ui/cart-items/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/ui/cart-items/src/**/*.ts", "libs/shoes/ui/cart-items/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/ui/cart-items"],
+          "options": {
+            "jestConfig": "libs/shoes/ui/cart-items/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shoes-ui-cart-item": {
+      "projectType": "library",
+      "root": "libs/shoes/ui/cart-item",
+      "sourceRoot": "libs/shoes/ui/cart-item/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/ui/cart-item/src/**/*.ts", "libs/shoes/ui/cart-item/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/ui/cart-item"],
+          "options": {
+            "jestConfig": "libs/shoes/ui/cart-item/jest.config.js",
             "passWithNoTests": true
           }
         }

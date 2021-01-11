@@ -18,7 +18,7 @@
                     <svg-icon class="cta__wishlist--icon" key="020-wishlist"></svg-icon>
                     <span *ngIf="wishlist.items.length" class="cta__wishlist--counter">{{wishlist.items.length}}</span>
                 </div>
-                <div class="cta__cart">
+                <div class="cta__cart" routerLink="/cart">
                     <svg-icon class="cta__cart--icon" key="014-shopping-cart"></svg-icon>
                     <span *ngIf="cart.shoes.length" class="cta__cart--counter">{{cart.shoes.length}}</span>
                 </div>

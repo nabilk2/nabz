@@ -1,0 +1,5 @@
+<ng-container *ngIf="shoes$ | async as shoes">
+    <ng-container *ngFor="let shoe of shoes | keyvalue">
+        <nabz-cart-item [shoeId]="shoe.key" [quantity]="shoe.value"></nabz-cart-item>
+    </ng-container>
+</ng-container>
