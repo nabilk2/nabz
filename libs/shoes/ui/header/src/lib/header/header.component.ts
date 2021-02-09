@@ -11,7 +11,7 @@ import { Cart, Wishlist } from '@nabz/shoes/shared/types';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
   cart: Cart;

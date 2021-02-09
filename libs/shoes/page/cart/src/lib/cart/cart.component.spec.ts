@@ -1,6 +1,13 @@
+import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CartComponent } from './cart.component';
+
+@Component({
+  selector: 'nabz-cart-items',
+  template: '',
+})
+class MockCartItemsComponent {}
 
 describe('CartComponent', () => {
   let component: CartComponent;
@@ -8,9 +15,8 @@ describe('CartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CartComponent ]
-    })
-    .compileComponents();
+      declarations: [CartComponent, MockCartItemsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

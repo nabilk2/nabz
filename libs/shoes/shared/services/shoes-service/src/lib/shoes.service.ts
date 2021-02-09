@@ -11,6 +11,7 @@ const BASE_URL = 'https://api.thesneakerdatabase.com/v1';
 })
 export class ShoesService {
   private filterSubject = new BehaviorSubject<Partial<ShoeFilters>>({ limit: '10', releaseYear: '2019' });
+  private shoeCache = new Map<string, Shoe>();
 
   filters$ = this.filterSubject.asObservable();
 
@@ -38,7 +39,7 @@ export class ShoesService {
     }, {});
   }
 
-  getShoe(shoeId: string): Observable<Shoe> {
-    return this.http.get<Shoe>(`${BASE_URL}/sneakers/${shoeId}`);
+  getShoe(shoeId: string): Observable<Shoe[]> {
+    return this.http.get<Shoe[]>(`${BASE_URL}/sneakers/${shoeId}`);
   }
 }

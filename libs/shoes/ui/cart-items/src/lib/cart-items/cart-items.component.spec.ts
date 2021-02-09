@@ -1,6 +1,16 @@
+import { Component, Input } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CartItemsComponent } from './cart-items.component';
+
+@Component({
+  selector: 'nabz-cart-item',
+  template: '',
+})
+class MockCartItemComponent {
+  @Input() shoeId;
+  @Input() quantity;
+}
 
 describe('CartItemsComponent', () => {
   let component: CartItemsComponent;
@@ -8,9 +18,8 @@ describe('CartItemsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CartItemsComponent ]
-    })
-    .compileComponents();
+      declarations: [CartItemsComponent, MockCartItemComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -20,7 +20,7 @@
                 </div>
                 <div class="cta__cart" routerLink="/cart">
                     <svg-icon class="cta__cart--icon" key="014-shopping-cart"></svg-icon>
-                    <span *ngIf="cart.shoes.length" class="cta__cart--counter">{{cart.shoes.length}}</span>
+                    <span *ngIf="(cart.shoes | keyvalue).length" class="cta__cart--counter">{{(cart.shoes | keyvalue).length}}</span>
                 </div>
                 <svg-icon class="cta__profile" key="010-profile"></svg-icon>
             </div>

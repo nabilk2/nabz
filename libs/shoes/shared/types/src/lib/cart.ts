@@ -1,4 +1,4 @@
 export interface Cart {
   sessionId: string;
-  shoes: Map<string, number>;
+  shoes: { [shoeId: string]: number };
 }

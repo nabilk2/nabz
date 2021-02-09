@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from '@nabz/shoes/shared/services/user-service';
+import { WishlistService } from '@nabz/shoes/shared/services/wishlist-service';
 import { Cart } from '@nabz/shoes/shared/types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  #cartSubject = new BehaviorSubject<Cart>({ sessionId: null, shoes: new Map() });
+  #cartSubject = new BehaviorSubject<Cart>({ sessionId: null, shoes: {} });
   cart$ = this.#cartSubject.asObservable();
+  has = Object.prototype.hasOwnProperty;
 
-  constructor(private _userService: UserService) {
+  constructor(private _userService: UserService, private _wishlistService: WishlistService) {
     if (localStorage.getItem('cart')) {
       const cart: Cart = JSON.parse(localStorage.getItem('cart'));
       this.#cartSubject.next(cart);
@@ -22,15 +24,14 @@ export class CartService {
   }
 
   add(shoeId: string): void {
-    const clonedShoes = {...this.#cartSubject.value.shoes};
+    let clonedShoes = { ...this.#cartSubject.value.shoes };
 
-    const hasShoe = clonedShoes.has(shoeId);
+    const hasShoe = this.has.call(clonedShoes, shoeId);
 
     if (!hasShoe) {
-      clonedShoes.set(shoeId, 1);
+      clonedShoes = { ...clonedShoes, [shoeId]: 1 };
     } else {
-      const shoe = clonedShoes.get(shoeId);
-      clonedShoes.set(shoeId, shoe + 1);
+      clonedShoes[shoeId]++;
     }
 
     this.#cartSubject.next({
@@ -41,15 +42,33 @@ export class CartService {
     this.storeCart();
   }
 
-  changeQuantity(shoeId: string, quantity: number): void {
+  changeQuantity(shoeId: string, quantity: number, toWishlist?: boolean): void {
     const { shoes } = this.#cartSubject.value;
 
-    const foundShoeIndex = shoes.has(shoeId);
-    
+    const foundShoeIndex = this.has.call(shoes, shoeId);
+
     if (foundShoeIndex) {
-      shoes.set(shoeId, quantity);
-      this.#cartSubject.next({...this.#cartSubject.value, shoes });
-      this.storeCart();      
+      if (quantity) {
+        shoes[shoeId] = quantity;
+        this.#cartSubject.next({ ...this.#cartSubject.value, shoes });
+      }
+
+      if (!quantity) {
+        this.#cartSubject.next({ ...this.#cartSubject.value, shoes: this.removeShoe(shoeId, toWishlist) });
+      }
+
+      this.storeCart();
     }
+  }
+
+  removeShoe(shoeId: string, toWishlist?: boolean): { [shoeId: string]: number } {
+    const { shoes } = this.#cartSubject.value;
+    const { [shoeId]: quantity, ...restOfShoes } = shoes;
+
+    if (toWishlist) {
+      this._wishlistService.add(shoeId);
+    }
+
+    return restOfShoes;
   }
 }
