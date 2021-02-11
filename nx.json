@@ -74,6 +74,9 @@
     },
     "shoes-ui-cart-item": {
       "tags": []
+    },
+    "shoes-ui-cart-detail": {
+      "tags": []
     }
   }
 }

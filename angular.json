@@ -431,6 +431,28 @@
           }
         }
       }
+    },
+    "shoes-ui-cart-detail": {
+      "projectType": "library",
+      "root": "libs/shoes/ui/cart-detail",
+      "sourceRoot": "libs/shoes/ui/cart-detail/src",
+      "prefix": "nabz",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/shoes/ui/cart-detail/src/**/*.ts", "libs/shoes/ui/cart-detail/src/**/*.html"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shoes/ui/cart-detail"],
+          "options": {
+            "jestConfig": "libs/shoes/ui/cart-detail/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

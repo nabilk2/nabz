@@ -15,5 +15,6 @@ module.exports = {
     '<rootDir>/libs/shoes/page/cart',
     '<rootDir>/libs/shoes/ui/cart-items',
     '<rootDir>/libs/shoes/ui/cart-item',
+    '<rootDir>/libs/shoes/ui/cart-detail',
   ],
 };

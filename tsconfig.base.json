@@ -31,7 +31,8 @@
       "@nabz/shoes/shared/services/wishlist-service": ["libs/shoes/shared/services/wishlist-service/src/index.ts"],
       "@nabz/shoes/page/cart": ["libs/shoes/page/cart/src/index.ts"],
       "@nabz/shoes/ui/cart-items": ["libs/shoes/ui/cart-items/src/index.ts"],
-      "@nabz/shoes/ui/cart-item": ["libs/shoes/ui/cart-item/src/index.ts"]
+      "@nabz/shoes/ui/cart-item": ["libs/shoes/ui/cart-item/src/index.ts"],
+      "@nabz/shoes/ui/cart-detail": ["libs/shoes/ui/cart-detail/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

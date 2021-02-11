@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { CartItemsModule } from '@nabz/shoes/ui/cart-items';
+import { CartDetailModule } from '@nabz/shoes/ui/cart-detail';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { CartItemsModule } from '@nabz/shoes/ui/cart-items';
     RouterModule.forChild([
       { path: '', component: CartComponent, pathMatch: 'full' }
     ]),
-    CartItemsModule
+    CartItemsModule,
+    CartDetailModule
   ],
   declarations: [
     CartComponent
